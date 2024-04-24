@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Модель</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <!-- <h1>Модель для предсказания цены автомобиля по характеристикам</h1> -->
+    <form method="post" action="/predict">
+      <h2 class="header">Выберите характеристики</h2>
+      Марка автомобиля<br />
+      <select class="list" name="brand">
+        <option value="No">Выбрать</option>
+        <option value="brand_Acura">Acura</option>
+        <option value="brand_Alfa">Alfa</option>
+        <option value="brand_Audi">Audi</option>
+        <option value="brand_BMW">BMW</option>
+        <option value="brand_Bentley">Bentley</option>
+        <option value="brand_Buick">Buick</option>
+        <option value="brand_Cadillac">Cadillac</option>
+        <option value="brand_Chevrolet">Chevrolet</option>
+        <option value="brand_Chrysler">Chrysler</option>
+        <option value="brand_Dodge">Dodge</option>
+        <option value="brand_Ford">Ford</option>
+        <option value="brand_GMC">GMC</option>
+        <option value="brand_Genesis">Genesis</option>
+        <option value="brand_Honda">Honda</option>
+        <option value="brand_Hummer">Hummer</option>
+        <option value="brand_Hyundai">Hyundai</option>
+        <option value="brand_INFINITI">INFINITI</option>
+        <option value="brand_Jaguar">Jaguar</option>
+        <option value="brand_Jeep">Jeep</option>
+        <option value="brand_Kia">Kia</option>
+        <option value="brand_Lamborghini">Lamborghini</option>
+        <option value="brand_Land">Land</option>
+        <option value="brand_Lexus">Lexus</option>
+        <option value="brand_Lincoln">Lincoln</option>
+        <option value="brand_MINI">MINI</option>
+        <option value="brand_Maserati">Maserati</option>
+        <option value="brand_Mazda">Mazda</option>
+        <option value="brand_Mercedes-Benz">Mercedes-Benz</option>
+        <option value="brand_Mitsubishi">Mitsubishi</option>
+        <option value="brand_Nissan">Nissan</option>
+        <option value="brand_Porsche">Porsche</option>
+        <option value="brand_RAM">RAM</option>
+        <option value="brand_Rivian">Rivian</option>
+        <option value="brand_Subaru">Subaru</option>
+        <option value="brand_Tesla">Tesla</option>
+        <option value="brand_Toyota">Toyota</option>
+        <option value="brand_Volkswagen">Volkswagen</option>
+        <option value="brand_Volvo">Volvo</option>
+      </select>
+      <br /><br />
+      Год<br />
+      <select class="list" name="year">
+        <option value="No">Выбрать</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
+        <option value="2009">2009</option>
+        <option value="2008">2008</option>
+        <option value="2007">2007</option>
+        <option value="2006">2006</option>
+        <option value="2005">2005</option>
+        <option value="2004">2004</option>
+        <option value="2003">2003</option>
+        <option value="2002">2002</option>
+        <option value="2001">2001</option>
+        <option value="2000">2000</option>
+        <option value="1999">1999</option>
+        <option value="1998">1998</option>
+        <option value="1997">1997</option>
+        <option value="1996">1996</option>
+        <option value="1995">1995</option>
+        <option value="1994">1994</option>
+        <option value="1993">1993</option>
+        <option value="1992">1992</option>
+      </select>
+      <br /><br />
+      Пробег<br />
+      <input
+        class="text_form"
+        type="text"
+        name="milage"
+        value=0
+        placeholder="Введите пробег в тыс. км."
+      />
+      <br /><br />
+      Тип топлива <br />
+      <select class="list" name="fuel_type">
+        <option value="No">Выбрать</option>
+        <option value="fuel_type_Gasoline">Бензин</option>
+        <option value="fuel_type_Diesel">Дизель</option>
+        <option value="fuel_type_Plug-In Hybrid">Электро</option>
+        <option value="fuel_type_Hybrid">Гибрид</option>
+        <option value="fuel_type_E85 Flex Fuel">E85</option>
+      </select>
+      <br /><br />
+      Объем двигателя <br />
+      <select class="list" name="engine">
+        <option value="No">Выбрать</option>
+        <option value="1.4">1.4</option>
+        <option value="1.5">1.5</option>
+        <option value="1.6">1.6</option>
+        <option value="1.8">1.8</option>
+        <option value="2.0">2.0</option>
+        <option value="2.3">2.3</option>
+        <option value="2.4">2.4</option>
+        <option value="2.5">2.5</option>
+        <option value="2.7">2.7</option>
+        <option value="2.9">2.9</option>
+        <option value="3.0">3.0</option>
+        <option value="3.2">3.2</option>
+        <option value="3.3">3.3</option>
+        <option value="3.4">3.4</option>
+        <option value="3.5">3.5</option>
+        <option value="3.6">3.6</option>
+        <option value="3.7">3.7</option>
+        <option value="3.8">3.8</option>
+        <option value="3.9">3.9</option>
+        <option value="4.0">4.0</option>
+        <option value="4.2">4.2</option>
+        <option value="4.3">4.3</option>
+        <option value="4.4">4.4</option>
+        <option value="4.6">4.6</option>
+        <option value="4.7">4.7</option>
+        <option value="4.8">4.8</option>
+        <option value="5.0">5.0</option>
+        <option value="5.2">5.2</option>
+        <option value="5.3">5.3</option>
+        <option value="5.4">5.4</option>
+        <option value="5.5">5.5</option>
+        <option value="5.6">5.6</option>
+        <option value="5.7">5.7</option>
+        <option value="6.0">6.0</option>
+        <option value="6.2">6.2</option>
+        <option value="6.4">6.4</option>
+        <option value="6.6">6.6</option>
+        <option value="6.7">6.7</option>
+      </select>
+      <br /><br />
+      Цвет кузова<br />
+      <select class="list" name="color">
+        <option value="No">Выбрать</option>
+        <option value="color_Black">Черный</option>
+        <option value="color_White">Белый</option>
+        <option value="color_Gray">Серый</option>
+        <option value="color_Silver">Серебрянный</option>
+        <option value="color_Blue">Синий</option>
+        <option value="color_Red">Красный</option>
+        <option value="color_Green">Зеленый</option>
+        <option value="color_Brown">Коричневый</option>
+        <option value="color_Gold">Золотой</option>
+        <option value="color_Beige">Бежевый</option>
+        <option value="color_Orange">Оранжевый</option>
+        <option value="color_Yellow">Желтый</option>
+      </select>
+      <br /><br />
+      Аварии <br />
+      <input type="radio" name="accident" value="0" />Не было<br />
+      <input type="radio" name="accident" value="1" />Были<br /><br />
+
+      <input
+        class="button"
+        type="submit"
+        value="Предсказать цену"
+      /><br /><br />
+      <input class="button" type="reset" value="Очистить форму" />
+    </form>
+  </body>
+</html>
