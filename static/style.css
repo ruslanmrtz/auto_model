@@ -14,10 +14,18 @@ body {
 }
 
 .text_form {
+  text-align: center;
   font-size: 18px;
-  height: 30px;
+  height: 300px;
   width: 250px;
 }
+
+.probeg_form {
+  font-size: 18px;
+  height: 32px;
+  width: 250px;
+}
+
 
 form {
   width: 300px;
@@ -41,6 +49,8 @@ form {
   background-color: #0071f0;
   outline: none;
   cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .button:focus,

@@ -6,9 +6,12 @@
     <title>Title</title>
 </head>
 <body>
-    <form>
+    <form class="text_form">
         <h2>Примерная цена автомобиля составляет</h2>
-        <h1>{{ cost }}</h1>
+        <h1>{{ cost }} руб.</h1>
+        <form action="/">
+            <a class="button" href="{{ url_for('index') }}" >На главную</a>
+        </form>
     </form>
 </body>
 </html>
