@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request
+import joblib
+from predict import get_predict
 
 app = Flask(__name__)
 
@@ -11,7 +13,6 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     result = dict(request.form)
-    print(result)
     if 'No' in result['brand']:
         return render_template('error.html', attr='марку автомобиля')
     elif 'No' in result['fuel_type']:
@@ -23,9 +24,8 @@ def predict():
     elif 'accident' not in result.keys():
         return render_template('error.html', attr='информацию о авариях')
 
-    return render_template('predict.html', cost=2)
-
-
+    prediction = get_predict(result)
+    return render_template('predict.html', cost=float(prediction))
 
 
 if __name__ == '__main__':
