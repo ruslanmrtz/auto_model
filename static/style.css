@@ -3,9 +3,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #0070f063;
+  background-image: url('photo.jpg');
+  background-size: cover;
   margin-bottom: 0.4rem;
 }
+
+
+a {background-color: #0070f063;}
+
 
 .list {
   font-size: 18px;
